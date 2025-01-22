@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>SOOP Extensions</title>
+    <style defer src="css/style.css"></style>
+    <script defer src="https://static.sooplive.co.kr/asset/app/extension-helper/soop-extension-sdk.js"></script>
+    <script defer src="js/main.js" type="text/javascript"></script>
+    <script defer src="js/playerControl.js" type="text/javascript"></script>
+    <link rel="import" href="streamer_screen.html">
+</head>
+<body>
+
+<div id="viewer">
+    <style>
+        #viewer {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            border-radius: 30px;
+        }
+    </style>
+</div>
+<div>
+    <div class="container">
+        <style>
+            .container {
+                box-shadow: 5px 5px 5px gray;
+                border-radius: 10px;
+                background-color: #ffffff;
+                padding: 30px;
+            }
+
+            #player {
+                padding: 10px
+            }
+        </style>
+        SingWith Player
+        <div class="player">
+            <div id="player"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
