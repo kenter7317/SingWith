@@ -11,7 +11,7 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '360',
         width: '640',
-        videoId: 'M7lc1UVf-VE',
+        videoId: '',
         events: {
             'onStateChange': onPlayerStateChange
         }
@@ -26,17 +26,16 @@ function onPlayerStateChange(event) {
             data =>{
                 let parser = new DOMParser();
                 let doc = parser.parseFromString(data, "text/html");
-                let list = doc.getElementById('component-list')
-                let video = list.getElementsByClassName('video')[0]
-                player.loadVideoById(video.getElementsByClassName("id")[0].innerText, 5, "large")
-                window.postMessage({
-                    action: 'REMOVE_VIDEO',
-                    userId: video.getElementsByClassName("UserId")[0].id
-                }, '*' )
+                let list = doc.getElementById('component-list');
+                let video = list.getElementsByClassName('video')[0];
+                player.loadVideoById(video.getElementsByClassName("id")[0].innerText, 5, "large");
+                window.postMessage(
+                    'REMOVE_FIRST_VIDEO'
+                , '*' );
             }
         ).catch(
             error => console.error(error)
-        )
+            )
     }
 }
 
