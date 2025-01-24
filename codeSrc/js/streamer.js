@@ -4,7 +4,7 @@ const extensionSdk = SDK();
 
 window.addEventListener("message", (event) => {
     if (event.data === 'REMOVE_FIRST_VIDEO') {
-        let targetElements = document.getElementsByClassName("video");
+        let targetElements = document.getElementsByClassName ("video");
         let targetElement = targetElements[0];
         targetElement.remove();
     }
@@ -47,25 +47,18 @@ extensionSdk.handleInitialization((authInfo, broadInfo, playerInfo) => {
     }
 
     function addVideo(videoId, message) {
-        handlePostMessage(sendingMessage(videoId, message));
+        handlePostMessage(videoId, message)
     }
 
-    function sendingMessage(videoId, message) {
-        return {
-            action: 'ADD_VIDEO',
-            videoId: videoId,
-            userId: message.userNickname,
-            userName: message.userName
-        }
-    }
+
 
     function parseUrl(url) {
         let params = new URLSearchParams(url.search)
         return params.get("v")
     }
 
-    function handlePostMessage(message) {
-        let videoId = message.videoId;
+    function handlePostMessage(videoId, message) {
+        let videoId = videoId
         let userId = message.userId;
         let userName = message.userName;
         let newHtml = `
