@@ -5,14 +5,27 @@
     <title>SOOP Extensions</title>
     <script defer src="https://static.sooplive.co.kr/asset/app/extension-helper/soop-extension-sdk.js"></script>
     <script defer src="js/streamer.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap" rel="stylesheet">
+    <style>
+        .chiron-goround-tc-main, video {
+            font-family: "Chiron GoRound TC", sans-serif;
+            font-weight: 600;
+        }
 
+        .component-title {
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
 <div>
     <div id="container">
         <div id="component-list">
             <div id="List-title" class="component">
-                <div class="component-title">대기열</div>
+                <div class="component-title chiron-goround-tc-main">대기열</div>
             </div>
             <!---start-list--->
             <div class="video">
